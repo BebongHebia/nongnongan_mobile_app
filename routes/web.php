@@ -6,6 +6,7 @@ use App\Models\Official;
 use App\Models\CalendarAct;
 use App\Models\Transaction;
 use App\Models\Announcement;
+use App\Models\IncidentReportInvolve;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\KagawadController;
@@ -16,6 +17,7 @@ use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\KagawadIdPicController;
 use App\Http\Controllers\OfficialIdPicController;
+use App\Http\Controllers\IncidentReportInvolveController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,6 +64,10 @@ Route::get('/fetch-cal-act', function(){
     return response()->json($cal_act);
 });
 
+Route::get('/fetch-personels/transaction-id={transaction_id}', function($transaction_id){
+    $persons = IncidentReportInvolve::where('transaction_id', $transaction_id)->get();
+    return response()->json($persons);
+});
 
 
 //Function
@@ -89,6 +95,8 @@ Route::post('/delete-cal-act', [CalendarActController::class, 'delete_cal_act'])
 
 Route::get('/api/calendar-events', [CalendarActController::class, 'getEvents']);
 
+Route::post('/add-involve', [IncidentReportInvolveController::class, 'add_personel']);
+Route::post('/remove-involve', [IncidentReportInvolveController::class, 'remove_personel']);
 
 Route::get('/', function () {
     return view('login');

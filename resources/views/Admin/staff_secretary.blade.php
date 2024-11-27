@@ -49,6 +49,66 @@
                                     <label>Date of birth</label>
                                     <input type="date" name="bday" class="form-control">
 
+                                    <label>Place of Birth</label>
+                                    <input type="text" name="place_of_birth" class="form-control" placeholder="Enter Place of Birth">
+
+                                    <label>Civil Status</label>
+                                    <select class="form-select select2" name="civil_status">
+                                        <option value="Single">Single</option>
+                                        <option value="Married">Married</option>
+                                        <option value="Separated">Separated</option>
+                                        <option value="Divorce">Divorce</option>
+                                        <option value="Widowed">Widowed</option>
+                                    </select>
+
+                                    <label>Citizenships</label>
+                                    <input type="text" name="citizenship" class="form-control" placeholder="Enter Citizenship">
+
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <label>Region</label>
+                                            <select class="form-select select2" name="region">
+                                                <option value="Region I - Ilocos Region">Region I - Ilocos Region</option>
+                                                <option value="Region II - Cagayan Valley">Region II - Cagayan Valley</option>
+                                                <option value="Region III - Central Luzon">Region III - Central Luzon</option>
+                                                <option value="Region IV-A - CALABARZON">Region IV-A - CALABARZON</option>
+                                                <option value="MIMAROPA Region">MIMAROPA Region</option>
+                                                <option value="Region V - Bicol Region">Region V - Bicol Region</option>
+                                                <option value="Region VI - Western Visayas">Region VI - Western Visayas</option>
+                                                <option value="Region VI - Western Visayas">Region VI - Western Visayas</option>
+                                                <option value="Region VII - Central Visayas">Region VII - Central Visayas</option>
+                                                <option value="Region VIII - Eastern Visayas">Region VIII - Eastern Visayas</option>
+                                                <option value="Region IX - Zamboanga Peninsula">Region IX - Zamboanga Peninsula</option>
+                                                <option value="Region X - Northern Mindanao">Region X - Northern Mindanao</option>
+                                                <option value="Region XI - Davao Region">Region XI - Davao Region</option>
+                                                <option value="Region XII - SOCCSKSARGEN">Region XII - SOCCSKSARGEN</option>
+                                                <option value="Region XIII - Caraga">Region XIII - Caraga</option>
+                                                <option value="NCR - National Capital Region">NCR - National Capital Region</option>
+                                                <option value="CAR">CAR</option>
+                                                <option value="BARMM">BARMM</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <label>Province</label>
+                                            <input type="text" name="province" class="form-control" placeholder="Enter Place of Birth">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <label>City/Municipality</label>
+                                            <input type="text" name="city_muni" class="form-control" placeholder="Enter Place of Birth">
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <label>Barangay</label>
+                                            <input type="text" name="barangay" class="form-control" placeholder="Enter Place of Birth">
+                                        </div>
+                                    </div>
+
+                                    <label>Proffession/Occupation</label>
+                                    <input type="text" name="profession" class="form-control" placeholder="Enter Place of Birth">
+
+
                                     <label>Purok - Address</label>
                                     <input type="text" name="purok" class="form-control" placeholder="Enter Purok">
 
@@ -209,6 +269,69 @@
 
                                                     <label>Date of birth</label>
                                                     <input type="date" name="bday" value="${staff_sec.bday}" class="form-control">
+
+                                                    <label>Place of Birth</label>
+                                                    <input type="text" name="place_of_birth" value="${staff_sec.place_of_birth}" class="form-control" placeholder="Enter Place of Birth">
+
+                                                    <label>Civil Status</label>
+                                                    <select class="form-select select2" name="civil_status">
+                                                        <option value="${staff_sec.civil_status}">${staff_sec.civil_status}</option>
+                                                        <option value="Single">Single</option>
+                                                        <option value="Married">Married</option>
+                                                        <option value="Separated">Separated</option>
+                                                        <option value="Divorce">Divorce</option>
+                                                        <option value="Widowed">Widowed</option>
+                                                    </select>
+
+                                                    <label>Citizenships</label>
+                                                    <input type="text" name="citizenship"  value="${staff_sec.citizenship}" class="form-control" placeholder="Enter Citizenship">
+
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <label>Region</label>
+                                                            <select class="form-select select2" name="region">
+                                                                <option value="${staff_sec.region}">${staff_sec.region}</option>
+                                                                <option value="Region I - Ilocos Region">Region I - Ilocos Region</option>
+                                                                <option value="Region II - Cagayan Valley">Region II - Cagayan Valley</option>
+                                                                <option value="Region III - Central Luzon">Region III - Central Luzon</option>
+                                                                <option value="Region IV-A - CALABARZON">Region IV-A - CALABARZON</option>
+                                                                <option value="MIMAROPA Region">MIMAROPA Region</option>
+                                                                <option value="Region V - Bicol Region">Region V - Bicol Region</option>
+                                                                <option value="Region VI - Western Visayas">Region VI - Western Visayas</option>
+                                                                <option value="Region VI - Western Visayas">Region VI - Western Visayas</option>
+                                                                <option value="Region VII - Central Visayas">Region VII - Central Visayas</option>
+                                                                <option value="Region VIII - Eastern Visayas">Region VIII - Eastern Visayas</option>
+                                                                <option value="Region IX - Zamboanga Peninsula">Region IX - Zamboanga Peninsula</option>
+                                                                <option value="Region X - Northern Mindanao">Region X - Northern Mindanao</option>
+                                                                <option value="Region XI - Davao Region">Region XI - Davao Region</option>
+                                                                <option value="Region XII - SOCCSKSARGEN">Region XII - SOCCSKSARGEN</option>
+                                                                <option value="Region XIII - Caraga">Region XIII - Caraga</option>
+                                                                <option value="NCR - National Capital Region">NCR - National Capital Region</option>
+                                                                <option value="CAR">CAR</option>
+                                                                <option value="BARMM">BARMM</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <label>Province</label>
+                                                            <input type="text" name="province" value="${staff_sec.province}" class="form-control" placeholder="Enter Place of Birth">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <label>City/Municipality</label>
+                                                            <input type="text" name="city_muni" value="${staff_sec.city_muni}" class="form-control" placeholder="Enter Place of Birth">
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <label>Barangay</label>
+                                                            <input type="text" name="barangay"  value="${staff_sec.barangay}" class="form-control" placeholder="Enter Place of Birth">
+                                                        </div>
+                                                    </div>
+
+                                                    <label>Proffession/Occupation</label>
+                                                    <input type="text" name="profession" value="${staff_sec.profession}" class="form-control" placeholder="Enter Place of Birth">
+
+
 
                                                     <label>Purok - Address</label>
                                                     <input type="text" name="purok" value="${staff_sec.purok}" class="form-control" placeholder="Enter Purok">

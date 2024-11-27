@@ -110,6 +110,14 @@ class UserController extends Controller
             'sex' => $request->sex,
             'bday' => $request->bday,
             'phone' => $request->phone,
+            'civil_status' => $request->civil_status,
+            'place_of_birth' => $request->place_of_birth,
+            'citizenship' => $request->citizenship,
+            'region' => $request->region,
+            'province' => $request->province,
+            'city_muni' => $request->city_muni,
+            'barangay' => $request->barangay,
+            'profession' => $request->profession,
             'role' => $request->role,
             'status' => 'Active',
             'username' => date("Ymd") . $get_latest_user_id->id,
@@ -140,6 +148,14 @@ class UserController extends Controller
         $user->purok = $request->purok;
         $user->sex = $request->sex;
         $user->bday = $request->bday;
+        $user->civil_status = $request->civil_status;
+        $user->place_of_birth = $request->place_of_birth;
+        $user->citizenship = $request->citizenship;
+        $user->region = $request->region;
+        $user->province = $request->province;
+        $user->city_muni = $request->city_muni;
+        $user->barangay = $request->barangay;
+        $user->profession = $request->profession;
         $user->phone = $request->phone;
         $user->status = $request->status;
         $user->save();

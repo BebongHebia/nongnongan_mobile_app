@@ -17,7 +17,15 @@ return new class extends Migration
             $table->string('purok');
             $table->string('sex');
             $table->string('bday');
-            $table->string('phone')->unique();
+            $table->string('civil_status');
+            $table->string('place_of_birth');
+            $table->string('citizenship');
+            $table->string('region');
+            $table->string('province');
+            $table->string('city_muni');
+            $table->string('barangay');
+            $table->string('profession');
+            $table->string('phone');
             $table->string('role');
             $table->string('status');
             $table->string('username');
