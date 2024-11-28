@@ -351,8 +351,12 @@ Route::get('/secretary-log', function(){
     }
 });
 
+Route::get('/forgot-password', function(){
+    return view('forgot_password');
+});
 
-
+Route::post('/search-account-for-recovery', [Usercontroller::class, 'search_account_recover']);
+Route::post('/change-password', [Usercontroller::class, 'change_password']);
 
 Route::get('/print-transactions-complete/trans-id={trans_id}', function($trans_id){
     $transactions = Transaction::find($trans_id);

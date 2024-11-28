@@ -80,6 +80,8 @@ class UserController extends Controller
                 'date' => date("Y-m-d h:i:sa"),
             ]);
 
+        }else{
+            return redirect()->back()->withErrors(['message' => 'Sorry, System didnt recognize any account, please check credentials and try again. Thank you']);
         }
     }
 
@@ -229,6 +231,35 @@ class UserController extends Controller
         $user->phone = $request->phone;
         $user->save();
         return redirect()->back();
+    }
+
+    public function search_account_recover(Request $request){
+        $search_account_recovery_result = User::where('phone', $request->phone)->where('username', $request->username)->count();
+
+
+
+        if ($search_account_recovery_result){
+            $user_details = User::where('phone', $request->phone)->where('username', $request->username)->first();
+            return view('recover_account', ['user_details' => $user_details]);
+        }else{
+            return redirect()->back()->withErrors(['message' => 'Sorry no account has been found please try again']);
+        }
+    }
+
+    public function change_password(Request $request){
+
+
+        if ($request->password == $request->confirm_password){
+            $get_user = User::find($request->user_id);
+            $get_user->password = bcrypt($request->password);
+            $get_user->save();
+
+            Alert::success('Password change successfully');
+
+            return redirect('/');
+        }else{
+            return redirect()->back()->withErrors(['message' => 'Password does not match. please try again']);
+        }
     }
 
 

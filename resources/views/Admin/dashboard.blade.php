@@ -97,8 +97,10 @@
         <!-- /.row -->
 
 
+
+
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-9">
                 <div class="card card-primary">
                     <div class="card-header">
                         <p class="card-text">
@@ -132,6 +134,45 @@
                     </div>
                 </div>
             </div>
+            <div class="col-sm-3">
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <p class="card-text">List of Announcement</p>
+                            </div>
+                            <div class="card-body">
+                                <div style="width:100%; margin:auto; padding:10px; border:1px solid gray; border-radius:10px; box-shadow:3px 3px 3px gray">
+                                    <img class="img-fluid mySlides" src="{{ asset('images/slideshow/image_1.jpg') }}" style="width:100%">
+                                    <img class="img-fluid mySlides" src="{{ asset('images/slideshow/image_2.jpg') }}" style="width:100%">
+                                    <img class="img-fluid mySlides" src="{{ asset('images/slideshow/image_3.jpg') }}" style="width:100%">
+                                    <img class="img-fluid mySlides" src="{{ asset('images/slideshow/image_4.jpg') }}" style="width:100%">
+                                    <img class="img-fluid mySlides" src="{{ asset('images/slideshow/image_5.jpg') }}" style="width:100%">
+                                </div>
+
+                                <div style="width: 100%; height: 300px; border: 1px solid gray; overflow: hidden; padding: 10px; border-radius: 10px; box-shadow: 3px 3px 3px gray;">
+                                    <div style="width: 100%; height: 100%; overflow-y: auto;">
+                                        @php
+                                            $get_announcement = App\Models\Announcement::all();
+                                        @endphp
+
+                                        @foreach ($get_announcement as $item_get_announcement)
+                                            <p class="text-start" style="padding: 3px; background-color: rgb(138, 253, 138); border-radius: 10px; margin: 5px 0;">
+                                                {{ $item_get_announcement->title }}
+                                            </p>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
         </div>
 
         <div class="row">
@@ -157,6 +198,30 @@
     </div><!-- /.container-fluid -->
 </section>
 <!-- /.content -->
+<script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none"; // Hide all slides
+            x[i].style.transition = ".5s";
+        }
+        // Increment index
+        myIndex++;
+        // Reset index if it exceeds the number of slides
+        if (myIndex > x.length) {
+            myIndex = 1;
+        }
+        // Display the current slide
+        x[myIndex - 1].style.display = "block";
+        x[myIndex - 1].style.transition = ".5s";
+        // Continue the slideshow
+        setTimeout(carousel, 2000); // Change image every 2 seconds
+    }
+  </script>
 
 <script>
 
